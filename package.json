@@ -1,0 +1,17 @@
+{
+  "name": "slides",
+  "version": "1.0.0",
+  "description": "A template of Markdown slides using mume and reveal.js",
+  "main": "main.js",
+  "scripts": {
+    "build": "node main.js",
+    "mmdc": "node mmdc.js"
+  },
+  "author": "Xinyu Ma",
+  "license": "ISC",
+  "dependencies": {
+    "@shd101wyy/mume": "^0.4.11",
+    "chalk": "^3.0.0",
+    "commander": "^4.0.1"
+  }
+}
