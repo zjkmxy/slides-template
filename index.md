@@ -24,3 +24,7 @@ $$
 <!-- slide -->
 ### Mermaid diagram
 ![sample](mermaid/sample.svg)
+
+<!-- slide -->
+### Ditaa ASCII diagram
+![sample](ditaa/gerrit-meta.svg)

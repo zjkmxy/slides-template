@@ -7,6 +7,7 @@ A template of Markdown slides using [mume](https://github.com/shd101wyy/mume),
 ```bash
 npm install
 ```
+Install ditaa via Homebrew if necessary.
 
 ## Basic Usage
 
