@@ -121,3 +121,7 @@ dist
 # Mac
 *.DS_Store
 
+
+mermaid/*.svg
+ditaa/*.svg
+

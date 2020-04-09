@@ -3,6 +3,8 @@
 A template of Markdown slides using [mume](https://github.com/shd101wyy/mume),
 [reveal.js](https://revealjs.com/) and [mermaid](https://mermaid-js.github.io/mermaid/)
 
+An example: [https://zjkmxy.github.io/slides-template/](https://zjkmxy.github.io/slides-template/)
+
 ## Installation
 ```bash
 npm install
