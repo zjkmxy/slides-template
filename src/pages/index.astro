@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro";
+import * as mainSlides from "../content/slides/main.md";
+---
+
+<Layout title="Slides template">
+	<main class="reveal">
+		<div class="slides">
+			<section>Slide in Astro file</section>
+			<section data-markdown>
+				<textarea data-template>
+					{mainSlides.rawContent}
+				</textarea>
+			</section>
+			<section>
+				<pre><code data-trim data-noescape class="language-typescript">
+					const name = new Name('/ndn/interest');
+					const interest = new Interest(name);
+				</code></pre>
+			</section>
+			<section>
+				<h3>Flowchart in Astro</h3>
+				<div class="mermaid">
+					<pre is:raw>
+						%%{init: {'theme': 'dark', 'themeVariables': { 'darkMode': true }}}%%
+						flowchart TD
+							A[Start] --> B{Is it?};
+							B -- Yes --> C[OK];
+							C --> D[Rethink];
+							D --> B;
+							B -- No ----> E[End];
+					</pre>
+				</div>
+			</section>
+		</div>
+	</main>
+</Layout>
+
+<style lang="scss">
+	main {
+		:global(.multiCol) {
+			display: table;
+			table-layout: fixed; // don't fudge depending on content
+			width: 100%;
+			text-align: left; // matter of taste, makes imho sense
+			:global(.col) {
+				display: table-cell;
+				vertical-align: top;
+				width: 50%;
+				padding: 2% 0 2% 3%; // some vertical, and between columns
+				&:first-of-type {
+					padding-left: 0;
+				} // there's nothing before col1
+			}
+		}
+	}
+</style>

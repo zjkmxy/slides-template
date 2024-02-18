@@ -1,0 +1,26 @@
+{
+  "name": "slides",
+  "type": "module",
+  "version": "2.0.0",
+  "description": "A template of Markdown slides using astro and reveal.js",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "author": "Xinyu Ma",
+  "license": "ISC",
+  "dependencies": {
+    "@astrojs/check": "^0.5.4",
+    "astro": "^4.4.0",
+    "reveal.js": "^5.0.4",
+    "reveal.js-mermaid-plugin": "^2.2.0",
+    "sass": "^1.71.0",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/reveal.js": "^4.4.8"
+  }
+}

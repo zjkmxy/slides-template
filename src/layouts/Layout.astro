@@ -1,0 +1,50 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Slides template" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+
+		<script>
+			import Reveal from "reveal.js";
+			import RevealHighlight from "reveal.js/plugin/highlight/highlight";
+			import RevealMarkdown from "reveal.js/plugin/markdown/markdown";
+			import RevealMath from "reveal.js/plugin/math/math"
+			// @ts-ignore
+			import RevealMermaid from "reveal.js-mermaid-plugin/plugin/mermaid/mermaid";
+
+			Reveal.initialize({
+				// hash: true,
+
+				// mermaid initialize config
+				// @ts-ignore
+				mermaid: {
+					// flowchart: {
+					//   curve: 'linear',
+					// },
+				},
+				plugins: [RevealHighlight, RevealMarkdown, RevealMermaid, RevealMath.KaTeX],
+			});
+		</script>
+	</body>
+</html>
+<style is:global>
+	@import "reveal.js/dist/reset.css";
+	@import "reveal.js/dist/reveal.css";
+	@import "reveal.js/dist/theme/night.css";
+	@import "reveal.js/plugin/highlight/monokai.css";
+</style>
