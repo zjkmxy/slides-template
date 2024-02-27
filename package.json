@@ -13,11 +13,11 @@
   "author": "Xinyu Ma",
   "license": "ISC",
   "dependencies": {
-    "@astrojs/check": "^0.5.4",
-    "astro": "^4.4.0",
-    "reveal.js": "^5.0.4",
+    "@astrojs/check": "^0.5.6",
+    "astro": "^4.4.5",
+    "reveal.js": "^5.0.5",
     "reveal.js-mermaid-plugin": "^2.2.0",
-    "sass": "^1.71.0",
+    "sass": "^1.71.1",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
