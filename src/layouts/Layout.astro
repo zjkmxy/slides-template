@@ -24,20 +24,34 @@ const { title } = Astro.props;
 			import RevealHighlight from "reveal.js/plugin/highlight/highlight";
 			import RevealMarkdown from "reveal.js/plugin/markdown/markdown";
 			import RevealMath from "reveal.js/plugin/math/math"
-			// @ts-ignore
+			// @ts-expect-error reveal.js-mermaid-plugin ships no type declarations
 			import RevealMermaid from "reveal.js-mermaid-plugin/plugin/mermaid/mermaid";
+
+			function reportInitFailure(error: unknown) {
+				console.error("Failed to initialize the reveal.js presentation", error);
+				const banner = document.createElement("div");
+				banner.className = "slides-init-error";
+				banner.setAttribute("role", "alert");
+				banner.textContent =
+					"Failed to initialize the presentation. See the browser console for details.";
+				document.body.prepend(banner);
+			}
 
 			Reveal.initialize({
 				// hash: true,
 
 				// mermaid initialize config
-				// @ts-ignore
+				// @ts-expect-error mermaid config is contributed by the mermaid plugin
 				mermaid: {
 					// flowchart: {
 					//   curve: 'linear',
 					// },
 				},
 				plugins: [RevealHighlight, RevealMarkdown, RevealMermaid, RevealMath.KaTeX],
+			}).catch(reportInitFailure);
+
+			window.addEventListener("unhandledrejection", (event) => {
+				console.error("Unhandled promise rejection in slides", event.reason);
 			});
 		</script>
 	</body>
@@ -47,4 +61,17 @@ const { title } = Astro.props;
 	@import "reveal.js/dist/reveal.css";
 	@import "reveal.js/dist/theme/night.css";
 	@import "reveal.js/plugin/highlight/monokai.css";
+
+	.slides-init-error {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 100;
+		padding: 0.75rem 1rem;
+		background-color: #8b1a1a;
+		color: white;
+		font-family: sans-serif;
+		text-align: center;
+	}
 </style>
