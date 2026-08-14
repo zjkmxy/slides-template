@@ -1,0 +1,15 @@
+---
+import { dedent, mermaidInit } from "../utils/mermaid";
+
+interface Props {
+	/** Diagram source, without the `%%{init: ...}%%` directive. */
+	code: string;
+	/** Per-diagram overrides of the shared mermaid config. */
+	config?: Record<string, unknown>;
+}
+
+const { code, config } = Astro.props;
+const source = `${mermaidInit(config)}\n${dedent(code)}`;
+---
+
+<div class="mermaid"><pre>{source}</pre></div>
