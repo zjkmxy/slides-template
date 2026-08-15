@@ -32,10 +32,6 @@ $$
 
 ### Mermaid diagram
 ```mermaid
-%%{init: {
-    'theme': 'dark',
-    'themeVariables': { 'darkMode': true, 'fontSize': '20px' },
-    'class':{ 'useMaxWidth': false }}}%%
 classDiagram
     98ca9 --> 92ec2
     92ec2 --> 51db3
